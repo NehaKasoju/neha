@@ -1,55 +1,31 @@
 body {
-    margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
-    background: #fdfdfd;
-    color: #333;
-    text-align: center;
   }
   
-  header {
-    padding: 60px 20px;
-    background: #e3f2fd;
-  }
-  
-  .hero-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-  }
-  
-  .features {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 40px 20px;
-    background: #ffffff;
-  }
-  
-  .feature img {
-    width: 80%;
-    max-width: 300px;
-    border-radius: 16px;
-  }
-  
-  .preview {
-    padding: 60px 20px;
-    background: #f0f4f8;
-  }
-  
-  .preview img {
-    width: 80%;
-    max-width: 400px;
-    border-radius: 24px;
-  }
-  
-  footer {
-    padding: 40px 20px;
-    background: #212121;
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center/cover;
     color: white;
   }
   
-  footer img {
-    width: 40px;
-    margin-bottom: 10px;
+  /* Section Titles */
+  h2 {
+    margin-bottom: 30px;
+  }
+  
+  /* Project Cards */
+  .card {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f8f9fa;
   }
   
