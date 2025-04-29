@@ -1,62 +1,55 @@
-/* Reset some default styles */
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
     font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    background: #f9f9f9;
+    background: #fdfdfd;
     color: #333;
-    padding: 0 20px;
+    text-align: center;
   }
   
   header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 60px 20px;
+    background: #e3f2fd;
   }
   
-  header h1 {
-    margin-bottom: 10px;
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
   }
   
-  nav a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    background: #ffffff;
   }
   
-  nav a:hover {
-    text-decoration: underline;
+  .feature img {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 16px;
   }
   
-  section {
-    margin: 40px 0;
+  .preview {
+    padding: 60px 20px;
+    background: #f0f4f8;
   }
   
-  .projects-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  
-  .project-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  .preview img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 24px;
   }
   
   footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #333;
-    color: #fff;
-    margin-top: 40px;
+    padding: 40px 20px;
+    background: #212121;
+    color: white;
+  }
+  
+  footer img {
+    width: 40px;
+    margin-bottom: 10px;
   }
   
