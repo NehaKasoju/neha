@@ -10,75 +10,131 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white">
+<body class="bg-white font-sans">
     <div id="root"></div>
 
     <script type="text/babel">
         // Hero Section Component
         function Hero() {
             return (
-                <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <img 
-                            src="images/neha-bg.jpg" 
-                            alt="Neha Kasoju" 
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/50"></div>
-                    </div>
-                    <div className="relative z-10 text-center text-white px-6" data-aos="fade-up">
-                        <h1 className="text-6xl font-bold mb-6">Building Equity Through Technology</h1>
-                        <p className="text-xl max-w-2xl mx-auto mb-8">
-                            From creating a braille printer to improve accessibility for young learners, to designing surgical tools that empower marginalized communities, I'm passionate about using innovation to make a difference.
-                        </p>
-                        <a href="#contact" className="bg-pink-500 text-white px-8 py-3 rounded-full hover:bg-pink-600 transition inline-block">
-                            Let's Connect
-                        </a>
-                    </div>
-                </section>
+                <section className="relative min-h-screen flex items-center">
+                    <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                        <div className="relative" data-aos="fade-right">
+                            <img 
+                                src="images/neha-bg.jpg" 
+                                alt="Neha Kasoju" 
+                                className="w-full h-[600px] object-cover rounded-2xl shadow-xl"
+                            />
+                            </div>
+                        <div className="text-left" data-aos="fade-left">
+                            <h1 className="text-5xl font-serif font-bold text-gray-800 mb-6">
+                                Building Equity Through Technology
+                            </h1>
+                            <p className="text-xl text-gray-600 mb-8">
+                                Blending advocacy, healthcare, and technology, my journey has always been rooted in equity. From researching gender-affirming care to building self-driving systems and founding grassroots initiatives, I've sought to design solutions that serve underrepresented communities.
+                            </p>
+                            <a href="#contact" className="bg-pink-500 text-white px-8 py-3 rounded-full hover:bg-pink-600 transition inline-block">
+                                Let's Connect
+                            </a>
+                        </div>
+                        </div>
+                    </section>
             );
         }
 
-        // About Section Component
-        function About() {
+        // Education Section Component
+        function Education() {
             return (
-                <section id="about" className="py-20 bg-gray-50">
+                <section id="education" className="py-20 bg-gray-50">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">About Me</h2>
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
-                            <div data-aos="fade-right">
-                                <p className="text-gray-600 mb-6">
-                                    Growing up, I was captivated not just by technological breakthroughs, but by their potential to improve lives. From robotics to neurotech, I've focused on how innovative technologies can address pressing global challenges and empower marginalized communities.
-                                </p>
-                                <p className="text-gray-600">
-                                    My work at Women's College Hospital in Transition-Related Surgery Research and my role as Durham District School Board Student Trustee have reinforced my commitment to building technology that creates meaningful impact.
-                                </p>
-                            </div>
-                            <div className="bg-white p-8 rounded-lg shadow-lg" data-aos="fade-left">
-                                <h3 className="text-2xl font-bold text-gray-800 mb-6">Key Initiatives</h3>
-                                <ul className="space-y-4">
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                                        <span>Founded Period Ontario - Distributing 13,000+ menstrual products annually</span>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                                        <span>Led Student Senate representing 83,000+ students</span>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                                        <span>Developed Operation Opportunities platform</span>
-                                    </li>
-                                    <li className="flex items-center">
-                                        <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                                        <span>Conducted research at Women's College Hospital</span>
-                                    </li>
-                                </ul>
+                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
+                            <h2 className="text-3xl font-serif font-bold text-gray-800 mb-6">Education</h2>
+                            <div className="flex items-start space-x-4">
+                                <div className="flex-shrink-0">
+                                    <img src="images/waterloo-logo.png" alt="University of Waterloo" className="w-16 h-16 object-contain"/>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-800">University of Waterloo</h3>
+                                    <p className="text-gray-600">BASc – Mechatronics, Robotics & Automation Engineering (Honours, Co-op)</p>
+                                    <p className="text-pink-500 mt-2">Elected Mechatronics Class Representative (Academic & Waterloo Engineering Society)</p>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+            );
+        }
+
+        // Experience Section Component
+        function Experience() {
+            const experiences = [
+                {
+                    title: "Orthopaedic Surgery Engineering",
+                    organization: "The Hospital for Sick Children",
+                    description: "Briefly describe role or leave as header only for now."
+                },
+                {
+                    title: "Vehicle Platform Division Member",
+                    organization: "Watonomous",
+                    description: "Developing ROS2 control nodes in C++ for joystick interfaces, safety systems, and autonomy. Supporting a fully autonomous Kia Soul, focusing on perception, control, and integration."
+                },
+                {
+                    title: "Student Trustee",
+                    organization: "Durham District School Board",
+                    description: "Driven to address inequity, I ran to represent 83,000+ students. From launching 'Operation Opportunities' to passing board-wide policies, I worked to reshape student advocacy in public education.",
+                    highlights: [
+                        "Elected voice of 83,000+ students",
+                        "Launched Operation Opportunities database",
+                        "Led Student Senate, monthly board reports, equity research",
+                        "Passed new Student Trustee policy",
+                        "Organized mental health conferences",
+                        "Spearheaded menstrual hygiene fundraisers in low-income schools"
+                    ]
+                },
+                {
+                    title: "Transition Surgery Researcher",
+                    organization: "Women's College Hospital",
+                    description: "Focused on improving healthcare accessibility and decision-making for transgender youth considering vaginoplasty.",
+                    highlights: [
+                        "Designed a 3D-printed speculum to improve biopsy accuracy and comfort for trans-female patients",
+                        "Created Transition Surgery Patient Advisory Board",
+                        "Developed Research Ethics Board proposals"
+                    ]
+                }
+            ];
+
+            return (
+                <section id="experience" className="py-20">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Experience</h2>
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {experiences.map((exp, index) => (
+                                <div 
+                                    key={index}
+                                    className="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition duration-300"
+                                    data-aos="fade-up"
+                                    data-aos-delay={index * 100}
+                                >
+                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{exp.title}</h3>
+                                    <p className="text-pink-500 mb-4">{exp.organization}</p>
+                                    <p className="text-gray-600 mb-4">{exp.description}</p>
+                                    {exp.highlights && (
+                                        <ul className="space-y-2">
+                                            {exp.highlights.map((highlight, i) => (
+                                                <li key={i} className="flex items-start">
+                                                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-3 mt-2"></span>
+                                                    <span className="text-gray-600">{highlight}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    </div>
+                            ))}
+                                    </div>
+                                </div>
                 </section>
             );
         }
@@ -110,14 +166,14 @@
             ];
 
             return (
-                <section id="projects" className="py-20">
+                <section id="projects" className="py-20 bg-gray-50">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Featured Projects</h2>
+                        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Featured Projects</h2>
                         <div className="grid md:grid-cols-3 gap-8">
                             {projects.map((project, index) => (
                                 <div 
                                     key={index} 
-                                    className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+                                    className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
                                     data-aos="fade-up"
                                     data-aos-delay={index * 100}
                                 >
@@ -148,23 +204,94 @@
                                             </svg>
                                         </a>
                                     </div>
+                                    </div>
+                            ))}
+                                    </div>
+                                </div>
+                </section>
+            );
+        }
+
+        // Awards Section Component
+        function Awards() {
+            const awards = [
+                { name: "Queen's Chancellor's", amount: "$48,000" },
+                { name: "Western National", amount: "$30,000" },
+                { name: "Ted Rogers Future Leaders", amount: "$26,800" },
+                { name: "A.J. and Muriel G. Billes", amount: "$10,000" },
+                { name: "Foresters Financial", amount: "$10,000" },
+                { name: "First-Year Entrance Award", amount: "UWaterloo" }
+            ];
+
+            return (
+                <section id="awards" className="py-20">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Awards</h2>
+                        <p className="text-center text-gray-600 mb-8" data-aos="fade-up">Over $190,000 in Scholarships Awarded</p>
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {awards.map((award, index) => (
+                                <div 
+                                    key={index}
+                                    className="bg-white rounded-2xl shadow-lg p-6 text-center"
+                                    data-aos="fade-up"
+                                    data-aos-delay={index * 100}
+                                >
+                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{award.name}</h3>
+                                    <p className="text-pink-500">{award.amount}</p>
+                                    </div>
+                            ))}
+                                    </div>
+                                </div>
+                </section>
+            );
+        }
+
+        // Hobbies Section Component
+        function Hobbies() {
+            const hobbies = [
+                { icon: "📷", title: "Photography", description: "Capturing the world through photography" },
+                { icon: "🌿", title: "Nature", description: "Enjoying nature walks, biking, and time with animals" },
+                { icon: "🌍", title: "Travel", description: "Travelling & even tried parasailing once!" },
+                { icon: "🍪", title: "Cooking", description: "Cooking, baking, and trying new recipes" },
+                { icon: "💻", title: "Hackathons", description: "Competing in hackathons like Hack the North, HawkHacks" },
+                { icon: "✍️", title: "Writing", description: "Writing blogs & making vlogs" }
+            ];
+
+            return (
+                <section id="hobbies" className="py-20 bg-gray-50">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Hobbies</h2>
+                        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up">
+                            Outside of work, I thrive in creative and exploratory spaces.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {hobbies.map((hobby, index) => (
+                                <div 
+                                    key={index}
+                                    className="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition duration-300"
+                                    data-aos="fade-up"
+                                    data-aos-delay={index * 100}
+                                >
+                                    <span className="text-4xl mb-4 block">{hobby.icon}</span>
+                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{hobby.title}</h3>
+                                    <p className="text-gray-600">{hobby.description}</p>
                                 </div>
                             ))}
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
             );
         }
 
         // Contact Section Component
         function Contact() {
             return (
-                <section id="contact" className="py-20 bg-gray-50">
+                <section id="contact" className="py-20">
                     <div className="container mx-auto px-6 text-center">
-                        <h2 className="text-4xl font-bold text-gray-800 mb-8" data-aos="fade-up">Let's Build Together</h2>
+                        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-8" data-aos="fade-up">Let's Build Together</h2>
                         <p className="text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                            Interested in collaborating on projects that make a difference? Let's connect and explore how we can create positive change together.
-                        </p>
+                                Interested in collaborating on projects that make a difference? Let's connect and explore how we can create positive change together.
+                            </p>
                         <div className="flex justify-center space-x-8" data-aos="fade-up" data-aos-delay="200">
                             <a 
                                 href="https://github.com/NehaKasoju" 
@@ -193,10 +320,10 @@
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
             );
         }
 
@@ -217,15 +344,20 @@
                             <a href="#" className="text-2xl font-bold text-gray-800">NK</a>
                             <div className="flex space-x-8">
                                 <a href="#about" className="text-gray-600 hover:text-pink-500 transition">About</a>
+                                <a href="#experience" className="text-gray-600 hover:text-pink-500 transition">Experience</a>
                                 <a href="#projects" className="text-gray-600 hover:text-pink-500 transition">Projects</a>
+                                <a href="#awards" className="text-gray-600 hover:text-pink-500 transition">Awards</a>
                                 <a href="#contact" className="text-gray-600 hover:text-pink-500 transition">Contact</a>
                             </div>
                         </div>
                     </nav>
 
                     <Hero />
-                    <About />
+                    <Education />
+                    <Experience />
                     <Projects />
+                    <Awards />
+                    <Hobbies />
                     <Contact />
 
                     {/* Footer */}
