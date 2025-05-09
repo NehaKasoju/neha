@@ -70,11 +70,11 @@
 
         // Experience Section Component
         function Experience() {
-            const experiences = [
+            const mainExperiences = [
                 {
                     title: "Orthopaedic Surgery Engineering",
                     organization: "The Hospital for Sick Children",
-                    description: "Briefly describe role or leave as header only for now."
+                    description: "Developing and testing novel surgical instrumentation."
                 },
                 {
                     title: "Vehicle Platform Division Member",
@@ -99,9 +99,38 @@
                     organization: "Women's College Hospital",
                     description: "Focused on improving healthcare accessibility and decision-making for transgender youth considering vaginoplasty.",
                     highlights: [
-                        "Designed a 3D-printed speculum to improve biopsy accuracy and comfort for trans-female patients",
-                        "Created Transition Surgery Patient Advisory Board",
-                        "Developed Research Ethics Board proposals"
+                        "Iteratively tested a 3D-printed speculum to improve biopsy accuracy and reduce discomfort for trans-female patients",
+                        "Conducted weekly patient check-ups, literature reviews, and data collection",
+                        "Established the Transition Surgery Patient Advisory Board and developed Research Ethics Board proposals"
+                    ]
+                }
+            ];
+
+            const researchExperiences = [
+                {
+                    title: "Quantum School for Young Students",
+                    organization: "University of Waterloo",
+                    acceptance: "5.6% Program Acceptance",
+                    description: "Collaborated with leading quantum researchers to advance knowledge in quantum mechanics, computing, and cryptography, focusing on mathematical frameworks.",
+                    highlights: [
+                        "Developed and optimized quantum algorithms in Python",
+                        "Simulated quantum gates, entanglement, error correction, teleportation, and cryptographic protocols",
+                        "Utilized Qiskit and Pennylane on quantum simulators"
+                    ]
+                },
+                {
+                    title: "AI Research & Engineering Researcher",
+                    organization: "York University",
+                    description: "Supported development, testing, and data analysis for predictive AI models using Python and C++, aimed at infectious disease detection in the Global South."
+                },
+                {
+                    title: "Molecular Biology Researcher",
+                    organization: "University of Toronto",
+                    description: "Conducted cutting-edge molecular biology research under Dr. Tim Hughes, decoding how cells recognize and interpret regulatory sequences.",
+                    highlights: [
+                        "Developed advanced pipetting techniques",
+                        "Implemented DNA labelling protocols",
+                        "Conducted Bradford assays"
                     ]
                 }
             ];
@@ -110,8 +139,10 @@
                 <section id="experience" className="py-20">
                     <div className="container mx-auto px-6">
                         <h2 className="text-4xl font-serif font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Experience</h2>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {experiences.map((exp, index) => (
+                        
+                        {/* Main Experiences */}
+                        <div className="grid md:grid-cols-2 gap-8 mb-16">
+                            {mainExperiences.map((exp, index) => (
                                 <div 
                                     key={index}
                                     className="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition duration-300"
@@ -131,10 +162,42 @@
                                             ))}
                                         </ul>
                                     )}
-                                    </div>
-                            ))}
-                                    </div>
                                 </div>
+                            ))}
+                        </div>
+
+                        {/* Research Experiences */}
+                        <div className="mt-16">
+                            <h3 className="text-3xl font-serif font-bold text-gray-800 mb-8 text-center" data-aos="fade-up">Research Experience</h3>
+                            <div className="grid md:grid-cols-3 gap-8">
+                                {researchExperiences.map((exp, index) => (
+                                    <div 
+                                        key={index}
+                                        className="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition duration-300"
+                                        data-aos="fade-up"
+                                        data-aos-delay={index * 100}
+                                    >
+                                        <h3 className="text-xl font-bold text-gray-800 mb-2">{exp.title}</h3>
+                                        <p className="text-pink-500 mb-2">{exp.organization}</p>
+                                        {exp.acceptance && (
+                                            <p className="text-sm text-gray-500 mb-4">{exp.acceptance}</p>
+                                        )}
+                                        <p className="text-gray-600 mb-4">{exp.description}</p>
+                                        {exp.highlights && (
+                                            <ul className="space-y-2">
+                                                {exp.highlights.map((highlight, i) => (
+                                                    <li key={i} className="flex items-start">
+                                                        <span className="w-2 h-2 bg-pink-500 rounded-full mr-3 mt-2"></span>
+                                                        <span className="text-gray-600">{highlight}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </section>
             );
         }
@@ -157,7 +220,7 @@
                     technologies: ["React", "MongoDB", "AWS"]
                 },
                 {
-                    title: "Healthcare Research",
+                    title: "So You're Thinking of Vaginoplasty?",
                     description: "Research initiative at Women's College Hospital improving healthcare accessibility for transgender youth.",
                     image: "images/project3.jpg",
                     link: "https://www.womenscollegehospital.ca/wrapping-up-summer-student-research-day-2023/",
@@ -220,7 +283,7 @@
                 { name: "Ted Rogers Future Leaders", amount: "$26,800" },
                 { name: "A.J. and Muriel G. Billes", amount: "$10,000" },
                 { name: "Foresters Financial", amount: "$10,000" },
-                { name: "First-Year Entrance Award", amount: "UWaterloo" }
+                { name: "First-Year Entrance Award", amount: "1/9,000 first-year students" }
             ];
 
             return (
