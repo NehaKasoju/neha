@@ -64,7 +64,7 @@
                                 Building Equity Through Technology
                             </h1>
                             <p className="text-xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="100">
-                                Blending advocacy, healthcare, and technology, my journey has always been rooted in equity. From researching gender-affirming care to building self-driving systems and founding grassroots initiatives, I've sought to design solutions that serve underrepresented communities.
+                                From creating a braille printer to improve accessibility for young learners, to designing surgical tools that empower marginalized communities, and reshaping education policies as a Student Trustee, I'm passionate about using innovation to make a difference.
                             </p>
                             <a 
                                 href="#contact" 
@@ -80,22 +80,20 @@
             );
         }
 
-        // Education Section Component
-        function Education() {
+        // About Section Component
+        function About() {
             return (
-                <section id="education" className="py-20 bg-gray-50">
+                <section id="about" className="py-20 bg-gray-50">
                     <div className="container mx-auto px-6">
-                        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
-                            <h2 className="text-3xl font-serif font-bold text-gray-800 mb-6">Education</h2>
-                            <div className="flex items-start space-x-4">
-                                <div className="flex-shrink-0">
-                                    <img src="images/waterloo-logo.png" alt="University of Waterloo" className="w-16 h-16 object-contain"/>
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-gray-800">University of Waterloo</h3>
-                                    <p className="text-gray-600">BASc – Mechatronics, Robotics & Automation Engineering (Honours, Co-op)</p>
-                                    <p className="text-pink-500 mt-2">Elected Mechatronics Class Representative (Academic & Waterloo Engineering Society)</p>
-                                </div>
+                        <div className="max-w-4xl mx-auto">
+                            <h2 className="text-4xl font-serif font-bold text-gray-800 mb-8 text-center" data-aos="fade-up">About Me</h2>
+                            <div className="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="100">
+                                <p className="text-lg text-gray-600 mb-6">
+                                    I thrive on hands-on projects, tackling complex challenges, and driving real impact through empathy-driven tech solutions. My journey has always been rooted in equity, from researching gender-affirming care to building self-driving systems and founding grassroots initiatives.
+                                </p>
+                                <p className="text-lg text-gray-600">
+                                    Let's build a more equitable world together :)
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -242,21 +240,21 @@
             const projects = [
                 {
                     title: "DotMatic: Braille Printer",
-                    description: "A compact and affordable braille printer designed to improve accessibility for young learners.",
+                    description: "A compact and affordable braille printer designed to improve accessibility for young learners. Built with LEGO EV3 and custom mechanical components, it provides a practical solution for creating braille documents.",
                     image: "images/project1.jpg",
                     link: "https://github.com/NehaKasoju/DotMatic",
                     technologies: ["RobotC", "LEGO EV3", "Servo Motors"]
                 },
                 {
                     title: "Operation Opportunities",
-                    description: "A full-stack platform connecting students with STEM opportunities and promoting inclusivity.",
+                    description: "A full-stack platform connecting students with STEM opportunities and promoting inclusivity. Features advanced filtering and matching algorithms to help users discover valuable opportunities.",
                     image: "images/project2.jpg",
                     link: "https://github.com/NehaKasoju/hawkhacks-2024",
                     technologies: ["React", "MongoDB", "AWS"]
                 },
                 {
-                    title: "So You're Thinking of Vaginoplasty?",
-                    description: "Research initiative at Women's College Hospital improving healthcare accessibility for transgender youth.",
+                    title: "Transition Surgery Research",
+                    description: "Research initiative at Women's College Hospital improving healthcare accessibility for transgender youth. Focused on developing patient resources and devices for trans-female treatments.",
                     image: "images/project3.jpg",
                     link: "https://www.womenscollegehospital.ca/wrapping-up-summer-student-research-day-2023/",
                     technologies: ["Research", "Healthcare", "Policy"]
@@ -264,14 +262,14 @@
             ];
 
             return (
-                <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
+                <section id="projects" className="py-20">
                     <div className="container mx-auto px-6">
-                        <h2 className="text-4xl font-serif font-bold text-gray-800 dark:text-white mb-12 text-center" data-aos="fade-up">Featured Projects</h2>
+                        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-12 text-center" data-aos="fade-up">Featured Projects</h2>
                         <div className="grid md:grid-cols-3 gap-8">
                             {projects.map((project, index) => (
                                 <div 
                                     key={index} 
-                                    className="group bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+                                    className="group bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
                                     data-aos="fade-up"
                                     data-aos-delay={index * 100}
                                 >
@@ -283,14 +281,11 @@
                                         />
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{project.title}</h3>
-                                        <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                                        <h3 className="text-xl font-bold text-gray-800 mb-3">{project.title}</h3>
+                                        <p className="text-gray-600 mb-4">{project.description}</p>
                                         <div className="flex flex-wrap gap-2 mb-4">
                                             {project.technologies.map((tech, i) => (
-                                                <span 
-                                                    key={i} 
-                                                    className="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full text-sm"
-                                                >
+                                                <span key={i} className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm">
                                                     {tech}
                                                 </span>
                                             ))}
@@ -387,12 +382,12 @@
         // Contact Section Component
         function Contact() {
             return (
-                <section id="contact" className="py-20">
+                <section id="contact" className="py-20 bg-gray-50">
                     <div className="container mx-auto px-6 text-center">
                         <h2 className="text-4xl font-serif font-bold text-gray-800 mb-8" data-aos="fade-up">Let's Build Together</h2>
                         <p className="text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                                Interested in collaborating on projects that make a difference? Let's connect and explore how we can create positive change together.
-                            </p>
+                            Interested in collaborating on projects that make a difference? Let's connect and explore how we can create positive change together.
+                        </p>
                         <div className="flex justify-center space-x-8" data-aos="fade-up" data-aos-delay="200">
                             <a 
                                 href="https://github.com/NehaKasoju" 
@@ -421,10 +416,10 @@
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                </a>
-                            </div>
+                            </a>
                         </div>
-                    </section>
+                    </div>
+                </section>
             );
         }
 
@@ -473,7 +468,7 @@
                     <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
 
                     <Hero />
-                    <Education />
+                    <About />
                     <Experience />
                     <Projects />
                     <Awards />
