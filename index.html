@@ -433,6 +433,15 @@
                     duration: 1000,
                     once: true
                 });
+
+                // Parallax effect
+                const handleScroll = () => {
+                    const scrolled = window.pageYOffset;
+                    document.documentElement.style.setProperty('--scroll-offset', `${scrolled * 0.5}px`);
+                };
+
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
             }, []);
 
             return (
